@@ -6,10 +6,15 @@ import java.util.regex.Pattern;
 public class StringAddCalculator {
     
     public static int splitAndSum(String text) {
-        int result=0;
+
         if (text == null||text.isEmpty()) {
             return 0;
         }
+
+        if(text.contains("-")){
+            throw new RuntimeException();
+        }
+
         if(text.length()==1){
             return Integer.parseInt(text);
         }
