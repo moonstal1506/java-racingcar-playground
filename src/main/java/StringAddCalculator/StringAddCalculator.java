@@ -7,7 +7,14 @@ public class StringAddCalculator {
         if (text == null||text.isEmpty()) {
             return 0;
         }
-        result = Integer.parseInt(text);
+        if(text.length()==1){
+            result = Integer.parseInt(text);
+        }
+
+        String[] numbers = text.split(",");
+        for(String number:numbers){
+            result+=Integer.parseInt(number);
+        }
         return result;
     }
 }
