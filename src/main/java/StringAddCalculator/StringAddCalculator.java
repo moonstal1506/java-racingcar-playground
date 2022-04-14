@@ -11,7 +11,7 @@ public class StringAddCalculator {
             result = Integer.parseInt(text);
         }
 
-        String[] numbers = text.split(",");
+        String[] numbers = text.split(",|:");
         for(String number:numbers){
             result+=Integer.parseInt(number);
         }
