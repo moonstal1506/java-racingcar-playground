@@ -3,26 +3,34 @@ package racingGame;
 import java.util.Objects;
 
 public class Car {
-
     private final String name;
+    public static int maxPosition=0;
+    private int position=0;
 
-    public Car(String name) throws IllegalAccessException {
+    Car(String name)  {
         if(name.length()>5){
-            throw new IllegalAccessException("자동차 이름은 5자를 초과할 수 없습니다.");
+            throw new IllegalArgumentException();
         }
         this.name=name;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return Objects.equals(name, car.name);
+    public void move(){
+        position++;
+        setMaxPosition();
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
+    public String getName() {
+        return name;
     }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setMaxPosition(){
+        if(maxPosition< this.position){
+            maxPosition=this.position;
+        }
+    }
+
 }
