@@ -6,14 +6,14 @@ import java.util.regex.Pattern;
 public class StringAddCalculator {
 
     public static int splitAndSum(String text) {
-        if(isNullOrEmpty(text)){
+        if (isNullOrEmpty(text)) {
             return 0;
         }
 
         Matcher matcher = Pattern.compile("//(.)\n(.*)").matcher(text);
         if (matcher.find()) {
             String customDelimiter = matcher.group(1);
-            String[] texts= matcher.group(2).split(customDelimiter);
+            String[] texts = matcher.group(2).split(customDelimiter);
             return add(toInts((texts)));
         }
 
@@ -21,34 +21,34 @@ public class StringAddCalculator {
 
     }
 
-    private static boolean isNullOrEmpty(String text){
-        return text==null||text.isEmpty();
+    private static boolean isNullOrEmpty(String text) {
+        return text == null || text.isEmpty();
     }
 
-    private static String[] splitString(String text){
+    private static String[] splitString(String text) {
         return text.split(",|:");
     }
 
-    private static int[] toInts(String[] texts){
-        int[] numbers=new int[texts.length];
-        for(int i=0;i<texts.length;i++){
-           numbers[i]= toInt(texts[i]);
+    private static int[] toInts(String[] texts) {
+        int[] numbers = new int[texts.length];
+        for (int i = 0; i < texts.length; i++) {
+            numbers[i] = toInt(texts[i]);
         }
         return numbers;
     }
 
-    private static int toInt(String text){
-        int number=Integer.parseInt(text);
-        if(number<0){
+    private static int toInt(String text) {
+        int number = Integer.parseInt(text);
+        if (number < 0) {
             throw new RuntimeException();
         }
         return number;
     }
 
-    private static int add(int[] numbers){
-        int result=0;
-        for(int number: numbers ){
-            result+=number;
+    private static int add(int[] numbers) {
+        int result = 0;
+        for (int number : numbers) {
+            result += number;
         }
         return result;
     }
