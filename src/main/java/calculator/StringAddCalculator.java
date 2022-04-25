@@ -32,9 +32,17 @@ public class StringAddCalculator {
     private static int[] toInts(String[] texts){
         int[] numbers=new int[texts.length];
         for(int i=0;i<texts.length;i++){
-           numbers[i]= Integer.parseInt(texts[i]);
+           numbers[i]= toInt(texts[i]);
         }
         return numbers;
+    }
+
+    private static int toInt(String text){
+        int number=Integer.parseInt(text);
+        if(number<0){
+            throw new RuntimeException();
+        }
+        return number;
     }
 
     private static int add(int[] numbers){
