@@ -1,10 +1,20 @@
 package calculator;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class StringAddCalculator {
 
     public static int splitAndSum(String text) {
         if(isNullOrEmpty(text)){
             return 0;
+        }
+
+        Matcher matcher = Pattern.compile("//(.)\n(.*)").matcher(text);
+        if (matcher.find()) {
+            String customDelimiter = matcher.group(1);
+            String[] texts= matcher.group(2).split(customDelimiter);
+            return add(toInts((texts)));
         }
 
         return add(toInts(splitString(text)));
@@ -16,7 +26,7 @@ public class StringAddCalculator {
     }
 
     private static String[] splitString(String text){
-        return text.split(",");
+        return text.split(",|:");
     }
 
     private static int[] toInts(String[] texts){
