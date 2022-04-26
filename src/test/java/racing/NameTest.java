@@ -2,6 +2,7 @@ package racing;
 
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,5 +14,11 @@ class NameTest {
             new Name("123456");
         }).isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("자동차 이름은 5자를 초과할 수 없습니다.");
+    }
+
+    @Test
+    void 이름생성() {
+        Name name = new Name("car");
+        assertThat(name.getName()).isEqualTo("car");
     }
 }
