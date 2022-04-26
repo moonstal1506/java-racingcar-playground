@@ -19,7 +19,7 @@ class CarsTest {
 
     @Test
     void 자동차위치(){
-        Car car = new Car(new Name("car"));
+        Car car = new Car("car");
         car.move();
         assertThat(car.StringPosition()).isEqualTo("car: -");
     }

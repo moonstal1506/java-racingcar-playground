@@ -5,8 +5,8 @@ public class Car {
     private Name name;
     private int position;
 
-    public Car(Name name) {
-        this.name = name;
+    public Car(String name) {
+        this.name = new Name(name);
         this.position = 0;
     }
 

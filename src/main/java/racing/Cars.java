@@ -12,7 +12,7 @@ public class Cars {
 
     private void createCar(String names){
         for(String name: splitName(names)){
-            cars.add(new Car(new Name(name)));
+            cars.add(new Car(name));
         }
     }
 
