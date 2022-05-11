@@ -12,5 +12,4 @@ public class Car {
         this.position = new Position();
     }
 
-
 }

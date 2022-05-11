@@ -2,6 +2,7 @@ package racing.model;
 
 public class Name {
 
+    private static final int LIMIT_NAME_LENGTH = 5;
     private String name;
 
     public Name(String name) {
@@ -21,7 +22,7 @@ public class Name {
     }
 
     private void checkNameLong(String name) {
-        if (name.length() > 5) {
+        if (name.length() > LIMIT_NAME_LENGTH) {
             throw new IllegalArgumentException("이름은 5자를 초과할 수 없습니다.");
         }
     }
