@@ -2,10 +2,17 @@ package racing.model;
 
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 class NameTest {
+
+    @Test
+    void 이름생성() {
+        Name name = new Name("car");
+        assertThat(name.getName()).isEqualTo("car");
+    }
 
     @Test
     void 이름공백예외() {

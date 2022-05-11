@@ -10,6 +10,10 @@ public class Name {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     private void checkNameEmpty(String name) {
         if (name == "" || name == null) {
             throw new IllegalArgumentException("이름은 공백일 수 없습니다.");
