@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Car {
 
+    private static final String COLON = " : ";
     private Name name;
     private Position position;
 
@@ -14,5 +15,9 @@ public class Car {
 
     public int move(){
        return position.move();
+    }
+
+    public String status(){
+        return name.getName()+COLON+position.getStringPosition();
     }
 }

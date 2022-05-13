@@ -6,9 +6,11 @@ import java.util.Random;
 public class Racing {
 
     private static final int MOVE_POSSIBLE_NUMBER = 4;
+    private static final String ENTER = "\n";
     private final int RANDOM_BOUND = 10;
     private Random random = new Random();
     private int maxPosition = Integer.MIN_VALUE;
+    private String  history ="";
 
     public void playGame(List<Car> cars, int times) {
         for (int i = 0; i < times; i++) {
@@ -19,7 +21,9 @@ public class Racing {
     public void playGame(List<Car> cars) {
         for (Car car : cars) {
             maxPosition = Math.max(maxPosition, moveCar(car, randomNumber()));
+            history+= car.status()+ ENTER;
         }
+        history+=ENTER;
     }
 
     private int randomNumber() {
@@ -38,5 +42,8 @@ public class Racing {
         return number >= MOVE_POSSIBLE_NUMBER;
     }
 
+    public String getHistory(){
+        return history;
+    }
 
 }

@@ -15,4 +15,12 @@ public class Position {
     public int move(){
         return ++position;
     }
+
+    public String getStringPosition(){
+        String StringPosition ="";
+        for(int i=0;i<position;i++){
+            StringPosition+="-";
+        }
+        return StringPosition;
+    }
 }
