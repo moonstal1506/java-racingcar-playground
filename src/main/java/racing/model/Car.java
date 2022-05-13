@@ -1,7 +1,5 @@
 package racing.model;
 
-import java.util.Objects;
-
 public class Car {
 
     private static final String COLON = " : ";
@@ -19,5 +17,13 @@ public class Car {
 
     public String status(){
         return name.getName()+COLON+position.getStringPosition();
+    }
+
+    public String getName() {
+        return name.getName();
+    }
+
+    public int getPosition() {
+        return position.getPosition();
     }
 }
