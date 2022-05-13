@@ -1,6 +1,6 @@
 package racing.controller;
 
-public class racingController {
+public class RacingController {
     public void run() {
 
     }

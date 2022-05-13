@@ -11,4 +11,8 @@ public class Position {
     public int getPosition() {
         return position;
     }
+
+    public int move(){
+        return ++position;
+    }
 }
